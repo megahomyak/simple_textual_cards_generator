@@ -17,7 +17,7 @@ CARD_TYPE_TO_CARD_INFO = {
 os.makedirs("results", exist_ok=True)
 
 
-for line_number, line in enumerate(csv.reader(open("cards.csv")), start=1):
+for line_number, line in enumerate(csv.reader(open("cards.csv", encoding="utf-8-sig"), delimiter=";"), start=1):
     card_type, card_text = line
     font = ImageFont.truetype("font/JetBrainsMono-Bold.ttf", 20)
     image = Image.open(f"frames/{card_type}.png")
