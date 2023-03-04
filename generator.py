@@ -24,5 +24,5 @@ for line_number, line in enumerate(csv.reader(open("cards.csv")), start=1):
     draw = ImageDraw.Draw(image)
     card_title, text_color = CARD_TYPE_TO_CARD_INFO[card_type]
     draw.text((40, 40), card_title, fill=text_color, font=font)
-    draw.text((40, 80), "\n".join(textwrap.wrap(card_text, 10)), fill=text_color, font=font)
+    draw.text((40, 80), "\n".join(textwrap.wrap(card_text, 42)), fill=text_color, font=font)
     image.save(f"results/{line_number}_{card_type}.png")
